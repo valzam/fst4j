@@ -1,0 +1,10 @@
+.ammonite
+.bloop
+.bsp
+.idea
+.metals
+.vscode
+target
+input.txt
+output.txt
+*.txt
