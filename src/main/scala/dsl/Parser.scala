@@ -1,4 +1,4 @@
-package genlang
+package dsl
 
 import java.lang.Thread.State
 import fastparse._

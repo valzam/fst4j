@@ -1,4 +1,4 @@
-package genlang
+package dsl
 
 import scala.collection.mutable
 import scala.io.Source

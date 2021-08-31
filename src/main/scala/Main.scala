@@ -1,4 +1,4 @@
-package genlang
+package dsl
 
 import fastparse._
 import fastparse.Parsed.Failure

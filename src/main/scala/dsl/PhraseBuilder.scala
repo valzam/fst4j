@@ -1,4 +1,4 @@
-package genlang
+package dsl
 
 object PhraseBuilder {
   def buildAsStrings(bps: Seq[Blueprint]): Seq[String] =
