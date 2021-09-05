@@ -34,13 +34,13 @@ case class FST() {
     s match {
       case hd :: Nil =>
         currentNode.children.find(_.content == hd) match {
-          case Some(value) => value.children.contains(end)
-          case None        => false
+          case Some(foundNode) => foundNode.children.contains(end)
+          case None            => false
         }
       case hd :: tail =>
         currentNode.children.find(_.content == hd) match {
-          case Some(value) => contains(tail, index.get(hd).get)
-          case None        => false
+          case Some(foundNode) => contains(tail, foundNode)
+          case None            => false
         }
       case Nil =>
         false
@@ -54,8 +54,8 @@ case class FST() {
         currentNode.children.find(_.content.startsWith(hd)).isDefined
       case hd :: tail =>
         currentNode.children.find(_.content.startsWith(hd)) match {
-          case Some(value) => hasPrefix(tail, index.get(hd).get)
-          case None        => false
+          case Some(foundNode) => hasPrefix(tail, foundNode)
+          case None            => false
         }
       case Nil =>
         true
