@@ -23,10 +23,12 @@ object PhraseBuilder {
 
   private def extendStringResult(res: Seq[String], newToken: String) =
     newToken match {
-      case ""                                            => res
-      case t if (t.startsWith(".") || t.startsWith(",")) => res.map(os => os ++ newToken)
+      case "" => res
+      case t if (t.startsWith(".") || t.startsWith(",")) =>
+        res.map(os => os ++ newToken)
       case _ =>
-        res.map(os => os ++ " " ++ newToken.trim)
+        def sep(x: String) = if (x != "") " " else ""
+        res.map(os => os ++ sep(os) ++ newToken.trim)
     }
 
   private def combine(base: Seq[String], s: Seq[String]) =
